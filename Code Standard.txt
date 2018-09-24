@@ -1,0 +1,24 @@
+Code Standard BloodBot:
+
+Variables / fields:
+	camelCase.
+Methods:
+	PascalCase.
+
+Only use pass by reference if necessary to change multiple values.
+	can be used for custom copy-constructor. 
+	Normally, a constructor copies info from one object to the other.
+	Copy constructor can be defined with Class(Class &x){};
+	here the pointer points to the variable defined, able to use the values there.
+		this means:
+		obj first;
+		first.name = "thomas";
+		obj second = first;
+		second.name = "fisk".
+		cout << first.name << endl; // will cout "fisk", as first variable  will be changed as well.
+		
+		a custom copy constructor is necessary here.
+dont use pointers, risk of contaminating memory and buffer overflow. 
+
+
+	
