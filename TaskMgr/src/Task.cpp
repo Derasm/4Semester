@@ -27,3 +27,19 @@ Task::Task(Point from, Point to, int priority)
 Task::~Task()
 {
 }
+auto GetCurrentDate(){
+  return currentDate;
+}
+
+auto GetCurrentTime(){
+  return currentTime;
+}
+
+Point GetFrom(){
+  return from;
+}
+
+Point GetTo(){
+  return to;
+}
+

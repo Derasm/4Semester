@@ -19,3 +19,9 @@ User::User(string name)
 User::~User()
 {
 }
+string GetUserName(){
+    return name;
+}
+int GetId(){
+    return id; 
+}
