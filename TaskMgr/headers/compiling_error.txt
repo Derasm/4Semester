@@ -1,0 +1,26 @@
+/home/rathma/Programming/Repos/4Semester/TaskMgr/headers/Task.h:1:9: warning: #pragma once in main file
+ #pragma once
+         ^~~~
+/home/rathma/Programming/Repos/4Semester/TaskMgr/headers/Task.h:9:5: error: non-static data member declared with placeholder ‘auto’
+     auto currentDate;
+     ^~~~
+/home/rathma/Programming/Repos/4Semester/TaskMgr/headers/Task.h:10:5: error: non-static data member declared with placeholder ‘auto’
+     auto currentTime;
+     ^~~~
+/home/rathma/Programming/Repos/4Semester/TaskMgr/headers/Task.h:12:5: error: ‘point’ does not name a type; did you mean ‘Point’?
+     point to;
+     ^~~~~
+     Point
+/home/rathma/Programming/Repos/4Semester/TaskMgr/headers/Task.h: In constructor ‘Task::Task(Point, Point)’:
+/home/rathma/Programming/Repos/4Semester/TaskMgr/headers/Task.h:19:32: error: no matching function for call to ‘Point::Point()’
+ Task::Task(Point from, Point to)
+                                ^
+In file included from /home/rathma/Programming/Repos/4Semester/TaskMgr/headers/Task.h:3:0:
+/home/rathma/Programming/Repos/4Semester/TaskMgr/headers/Point.h:7:5: note: candidate: Point::Point(int, int)
+     Point(int x,int y);
+     ^~~~~
+/home/rathma/Programming/Repos/4Semester/TaskMgr/headers/Point.h:7:5: note:   candidate expects 2 arguments, 0 provided
+/home/rathma/Programming/Repos/4Semester/TaskMgr/headers/Point.h:2:7: note: candidate: constexpr Point::Point(const Point&)
+ class Point
+       ^~~~~
+/home/rathma/Programming/Repos/4Semester/TaskMgr/headers/Point.h:2:7: note:   candidate expects 1 argument, 0 provided

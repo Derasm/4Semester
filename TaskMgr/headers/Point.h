@@ -1,20 +1,11 @@
-#ifndef(Point.h)
-#define Point.h
-
+#pragma once
 class Point
 {
 private:
-    int x,y
+  int xPoint,yPoint;
 public:
-    Point(int x,y);
+    Point();
+    Point(int x, int y);
     ~Point();
+
 };
-
-Point::Point(int x, int y)
-{
-}
-
-Point::~Point()
-{
-}
-#endif

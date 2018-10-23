@@ -1,45 +1,30 @@
-#include "User.h"
-#include "date.h" // special library from github.
+#include "../headers/User.h"
+#include "../headers/date.h" // special library from github.
+#include "../headers/Point.h"
+#include "../headers/Task.h"
 #include <chrono>
-class Task
-{
-  private:
-    auto currentDate;
-    auto currentTime;
-    Point from;
-    Point to;
-    int priority;
-
-  public:
-    Task(Point from, Point to);
-    ~Task();
-};
+using namespace std::chrono;
+using namespace date; //doesn't conflict with chrono
 
 Task::Task(Point from, Point to, int priority)
 {
-    from -> from;
-    to -> to;
-    priority -> priority;
-    currentDate = floor<days>(system_clock::now()); // current date.
-    currentTime = system_clock::now(); // should get current time.
+    fromPoint = from;
+    toPoint = to;
+    taskPriority = priority;
+    currentDate = floor<date::days>(system_clock::now()); // current date.
 }
 
 Task::~Task()
 {
 }
-auto GetCurrentDate(){
+date::year_month_day Task::GetCurrentDate(){
   return currentDate;
 }
 
-auto GetCurrentTime(){
-  return currentTime;
+Point Task::GetFrom(){
+  return fromPoint;
 }
 
-Point GetFrom(){
-  return from;
+Point Task::GetTo(){
+  return toPoint;
 }
-
-Point GetTo(){
-  return to;
-}
-
