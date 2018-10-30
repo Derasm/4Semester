@@ -1,11 +1,15 @@
 #include "Point.h"
-
-Point::Point(int x, int y)
+int Point::GetX()
 {
-  xPoint = x;
-  yPoint = y;
+	return x;
 }
-
+int Point::GetY()
+{
+	return y;
+}
+Point::Point()
+{
+}
 Point::~Point()
 {
 }

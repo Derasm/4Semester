@@ -1,14 +1,14 @@
 #pragma once
 #include "Task.h"
+#include <list>
 class dbTask
 {
-private:
-
 public:
+	Task FindTask(int ID);
+	Task InsertTask(Task task);
+	Task CompleteTask(Task task);
+	std::list<Task> FindAllTasks();
 	dbTask();
 	~dbTask();
-  Task GetTask();
-
-
-
 };
+

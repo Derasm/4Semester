@@ -1,8 +1,8 @@
-class dbUser {
-private:
-  int id;
-
+#pragma once
+class dbUser
+{
 public:
-  dbUser ();
-  virtual ~dbUser ();
+	dbUser();
+	~dbUser();
 };
+

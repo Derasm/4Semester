@@ -2,10 +2,10 @@
 class Point
 {
 private:
-  int xPoint,yPoint;
+	int x, y;
 public:
-    Point();
-    Point(int x, int y);
-    ~Point();
-
+	int GetX();
+	int GetY();
+	Point();
+	~Point();
 };

@@ -1,15 +1,17 @@
 #pragma once
-#include <vector>
 #include "Task.h"
-#include "Point.h"
+#include <string>
+#include <vector>
 class CtrTask
 {
-private:
-
+	/*
+	Handles the creation of Tasks from the UI. Connects to DB abstraction layer to insert objects in DB.
+	
+	*/
 public:
-	std::vector<Task> GetTasks();
-	void CompleteTask(Task task);
-	Task NewTask(Point from, Point to, int priority);
+	Task FindTask(int ID);
+	int CreateTask(Point from, Point to, int priority);
+	bool CompleteTask();
 
 	CtrTask();
 	~CtrTask();
