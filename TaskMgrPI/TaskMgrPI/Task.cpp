@@ -1,4 +1,24 @@
 #include "Task.h"
+void Task::SetFrom(Point pFrom)
+{
+	from = pFrom;
+}
+void Task::SetTo(Point pTo)
+{
+	to = pTo;
+}
+void Task::SetPriority(int prior)
+{
+	priority = prior;
+}
+void Task::SetID(int id)
+{
+	ID = id;
+}
+void Task::SetComplete(bool status)
+{
+	isComplete = status;
+}
 Task::Task()
 {
 }

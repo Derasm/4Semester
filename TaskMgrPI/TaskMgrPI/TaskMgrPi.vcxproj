@@ -121,6 +121,7 @@
     <ClInclude Include="dbUser.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Task.h" />
+    <ClInclude Include="UI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CtrTask.cpp" />
@@ -128,6 +129,7 @@
     <ClCompile Include="dbUser.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="Task.cpp" />
+    <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

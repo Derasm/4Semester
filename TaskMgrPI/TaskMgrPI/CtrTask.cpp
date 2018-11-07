@@ -14,14 +14,37 @@ Task CtrTask::FindTask(int ID)
 
 int CtrTask::CreateTask(Point from, Point to, int priority)
 {
-	//TODO
-	return 0;
+	Task task;
+	task.SetFrom(from);
+	task.SetTo(to);
+	task.SetPriority(priority);
+	return task.GetID();
 }
 
 bool CtrTask::CompleteTask()
 {
 	//TODO
 	return false;
+}
+
+void CtrTask::
+DeleteTask()
+{
+}
+
+void CtrTask::Smth()
+{
+	dosomething();
+}
+
+Task CtrTask::Dotask()
+{
+	return Task();
+}
+
+Task CtrTask::AssembleTask()
+{
+	return Task();
 }
 
 CtrTask::CtrTask()

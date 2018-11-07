@@ -48,6 +48,9 @@
     <ClInclude Include="..\..\TaskMgr\headers\date.h">
       <Filter>External Resource Files</Filter>
     </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CtrTask.cpp">
@@ -64,6 +67,9 @@
     </ClCompile>
     <ClCompile Include="Point.cpp">
       <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
