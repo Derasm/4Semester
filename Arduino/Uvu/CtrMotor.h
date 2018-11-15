@@ -12,9 +12,9 @@ private:
 	void rev(int speed);
 public:
     CtrMotor();
-    Motor CreateMotor(int In1pin, int In2pin, int PWMpin, int offset);
     ~CtrMotor();
-
+    Motor CreateMotor(int In1pin, int In2pin, int PWMpin, int offset);
+    
     void Drive(int speed, Motor motor);
     void Drive(int speed, int duration, Motor motor);
     void Brake(Motor);
