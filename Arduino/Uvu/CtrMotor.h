@@ -11,18 +11,22 @@ private:
     void fwd(int speed);
 	void rev(int speed);
 public:
-    CtrMotor();
+    CtrMotor(); //blank constructor to appease Arduino
     ~CtrMotor();
     Motor CreateMotor(int In1pin, int In2pin, int PWMpin, int offset);
+    //foundational method for driving the bot. Called by forward.
+    void Drive(int speed, Motor motor); 
+    void Drive(int speed, double duration, Motor motor);
     
-    void Drive(int speed, Motor motor);
-    void Drive(int speed, int duration, Motor motor);
-    void Brake(Motor);
-    void Standby(Motor motor);
+    void Brake(Motor motor);
+    //is commented out as Standby is the absence of movement.
+    // void Standby(Motor motor);
     void Forward(Motor motor1, Motor motor2);
+    void Forward(Motor motor1, Motor motor2, int speed);//same as drive, with double motor
     void Backward(Motor motor1, Motor motor2, int speed);
     void Left(Motor left, Motor right, int speed);
     void Right(Motor left, Motor right, int speed);
-    void Drive(Direction direction);
+    //will likely be a switch with direction based on the variable on the object.
+    void Drive(Direction direction, Motor left, Motor right);
 };
 
