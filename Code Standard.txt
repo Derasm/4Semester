@@ -1,4 +1,4 @@
-Code Standard BloodBot:
+Code Standard uVu:
 
 Variables / fields:
 	camelCase.
@@ -18,7 +18,11 @@ Only use pass by reference if necessary to change multiple values.
 		cout << first.name << endl; // will cout "fisk", as first variable  will be changed as well.
 		
 		a custom copy constructor is necessary here.
-dont use pointers, risk of contaminating memory and buffer overflow. 
+dont use pointers, risk of contaminating memory and buffer overflow, plus more to think about.
 
+Software arkitektur
 
-	
+Arduino
+Arduinoen selv kører med en modificeret Main method der består af en Setup() metode og en Loop() metode
+Setup() bliver kaldt først, hvor ting der skal bruges for at køre resten af programmet kan kaldes
+Dette
