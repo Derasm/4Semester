@@ -53,3 +53,12 @@ Structs:
 	Carry over from C, in C++ classes are preferred.
 	Default access modifier is public.
 	
+
+kilder:
+https://american-cse.org/csci2015/data/9795a102.pdf har arkitekturdelen
+https://www.ucn.dk/Files/Billeder/ucn/Uddannelser/Datamatiker/Studieordning-f%C3%A6lles-2014-datamatiker.pdf
+https://www.ucn.dk/Files/Billeder/ucn/Uddannelser/Datamatiker/Studieordning-Institutionsdel-Datamatiker-2018.pdf
+file:///D:/Programmering/Repositories/GitLab/3semester-rpgassistent/3rd_SemesterProject__Programming_Teknologi.pdf
+http://www.win.tue.nl/~setalle/introduction.html
+https://www.ucn.dk/uddannelser/datamatiker/uddannelsens-indhold/studieordning-og-regelgrundlag
+https://learn.sparkfun.com/tutorials/tb6612fng-hookup-guide

@@ -1,5 +1,5 @@
 #include "arduino.h"
-#include "Motor.h"
+#include "CtrMotor.h" // controller of the motors
 
 //Pins for the shield. 
 #define PWMA 3 
@@ -11,21 +11,15 @@
 //ofset is used to switch directions if needed from software instead of hardware.
 #define OFFSET 1
 //defined outside of Setup so i can use it in Loop in Visual Code.
-Motor motorLeft = Motor(A1N1, A1N2, PWMA, OFFSET);
-Motor motorRight = Motor(B1N1, B1N2, PWMB, OFFSET);
+CtrMotor ctrMotor = CtrMotor();
 
 void setup(){
     //setup things before the program can run.
     
 }
 void loop(){
-    //test of individual motors.
-    motorLeft.Drive(255, 1000);
-    motorRight.Drive(255, 1000);
-    //test of both motors. Though this is called on one motor for some reason.
-    //this would be changed with a controller that has functions, and not a motor.
-    //motorLeft.Forward(motorLeft, motorRight);
-    //delay(1000);
-    //motorLeft.Backward(motorLeft, motorRight, DEFAULTSPEED);
-    //delay(1000);
+    /*
+    will run in a positive feedback loop where a task is sent to the bot, the bot figures a route and moves to the area.
+
+    */
 }
