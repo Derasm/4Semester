@@ -13,7 +13,9 @@
                 "D:/Programs/Arduino 1.8.6/hardware/arduino/avr/cores/arduino",
                 "D:/Programs/Arduino 1.8.6/hardware/arduino/avr/variants/standard",
                 "D:/Programs/Arduino 1.8.6/hardware/tools/avr/avr/include",
-                "D:/Programs/Arduino 1.8.6/hardware/tools/avr/lib/gcc/avr/4.9.2/include"
+                "D:/Programs/Arduino 1.8.6/hardware/tools/avr/lib/gcc/avr/4.9.2/include",
+                "${workspaceFolder}/Arduino/Uvu/**",
+                "${workspaceFolder}/Arduino/Uvu/Model"
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": false,
