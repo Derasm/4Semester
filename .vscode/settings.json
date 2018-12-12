@@ -1,2 +1,8 @@
 {
+    "files.associations": {
+        "utility": "cpp",
+        "cstdint": "cpp",
+        "initializer_list": "cpp",
+        "type_traits": "cpp"
+    }
 }

@@ -10,7 +10,7 @@ Uses A* for easiest route to the endlocation.
 class CtrPlanning
 {
 private:
-    //grid is received from Super. 
+    //grid is received from Loop 
 
 public:
     CtrPlanning(/* args */);
