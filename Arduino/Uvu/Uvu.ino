@@ -29,7 +29,7 @@ void loop(){
    int gridDistance = 10;
    CtrDistance distance = CtrDistance();
    
-   for(int i = 0; i < ListOfActions.size(); i++)
+   for(int i = 0; i < ListOfActions.size(); i++) // pseudocode to show stuff
    {
        while(distance.GetDistanceDriven() <= gridDistance){
        //cases for the different actions, until a better solution is found. 
