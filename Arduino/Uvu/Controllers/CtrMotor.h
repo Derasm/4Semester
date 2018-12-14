@@ -9,7 +9,14 @@
 /*
     CtrMotor calls functions on the Motor itself to seperate the responsibility
     no method takes speed as a parameter, as it is unnecessary.
-
+#define PWMA 3 
+#define A1N2 13
+#define A1N1 12
+#define B1N1 10
+#define B1N2 8
+#define PWMB 9
+//ofset is used to switch directions if needed from software instead of hardware.
+#define OFFSET 1
 */
 
 class CtrMotor
@@ -18,16 +25,18 @@ private:
     int in1, in2, PWM, offset;
     void fwd(int speed);
 	void rev(int speed);
+    Motor left;
+    Motor right;
 public:
-    CtrMotor(); //blank constructor to appease Arduino
+    CtrMotor(); 
     ~CtrMotor();
     Motor CreateMotor(int In1pin, int In2pin, int PWMpin, int offset);
     void Brake(Motor motor);
-    void Forward(Motor left, Motor right);
-    void Backward(Motor left, Motor right);
-    void Left(Motor left, Motor right);
-    void Right(Motor left, Motor right);
-    void Stop(Motor left, Motor right);
-    void DriveByDirections(std::vector<std::string> directions, Motor left, Motor right);
+    void Forward();
+    void Backward();
+    void Left();
+    void Right();
+    void Stop();
+    void DriveByDirections(std::vector<std::string> directions);
 };
 

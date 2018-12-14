@@ -1,6 +1,5 @@
 #include "arduino.h"
 #include "CtrMotor.h" // controller of the motors
-#include "CtrDistance.h" // accelerometer.
 #include "CtrPlanning.h"
 #include <string>
 #include <vector>
@@ -16,16 +15,9 @@
 // #define B1N2 8
 // #define PWMB 9
 //Pins for the shield. 
-#define PWMA 3 
-#define A1N2 13
-#define A1N1 12
-#define B1N1 10
-#define B1N2 8
-#define PWMB 9
-//ofset is used to switch directions if needed from software instead of hardware.
-#define OFFSET 1
-//defined outside of Setup so i can use it in Loop in Visual Code.
-CtrDistance ctrDistance = CtrDistance();
+
+//defined outside of Setup so i can use it in Loop. #globalVariablesDidNothingWrong
+
 CtrPlanning ctrPlanning = CtrPlanning();
 CtrMotor ctrMotor = CtrMotor();
 
@@ -37,24 +29,25 @@ void setup(){
     will run in a positive feedback loop where a task is sent to the bot, the bot figures a route and moves to the area.
     */
 void loop(){    
-    Motor leftMotor = ctrMotor.CreateMotor(8,10,9,0); //made global 
-    Motor rightMotor = ctrMotor.CreateMotor(12,13,3,0);
+    std::vector<std::string> route = DrivingRoute();
+    ctrMotor.DriveByDirections(route);
     //sends the motor controller the list of directions 
 
 }//end of method
 std::vector<std::string> DrivingRoute(){
     
     //this part is unnecessary and simply to show a random setup of points and driving route. 
-    int arrarForNr[4];
+    int arrayForNr[4];
+    int maxSize = 5; //is not n-inclusive
     for(int i = 0; i < 4; i++)
     {
-        srand(time(NULL));
-        arrarForNr[i] = std::rand();
+        srand(time(NULL)); //makes a seed for rand based on current time. 
+        arrayForNr[i] = std::rand() % maxSize;
     }
-    int startX = arrarForNr[0];
-    int startY = arrarForNr[1];
-    int endX = arrarForNr[2];
-    int endY = arrarForNr[3];
+    int startX = arrayForNr[0];
+    int startY = arrayForNr[1];
+    int endX = arrayForNr[2];
+    int endY = arrayForNr[3];
     //the actual routegetting part. 
     Point startPoint = ctrPlanning.CreatePoint(startX,startY); //creates point with coordinates.
     Point endPoint = ctrPlanning.CreatePoint(endX,endY);

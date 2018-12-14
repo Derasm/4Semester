@@ -7,7 +7,7 @@
 
 //Pins
 #define PWMA 3
-#define A1n2 13
+#define A1N2 13
 #define A1N1 12
 
 #define B1N1 10
@@ -19,54 +19,58 @@ Motor CtrMotor::CreateMotor(int In1pin, int In2pin, int PWMpin, int offset){
     Motor motor = Motor(In1pin, In2pin, PWMpin, offset);
     return motor;
 }
+CtrMotor::CtrMotor(){
+    left = Motor(A1N1,A1N2,PWMA,offset);
+    right = Motor(B1N1,B1N2,PWMB,offset);
+}
 
 void CtrMotor::Brake(Motor motor){
     motor.Brake();
 }
-void CtrMotor::Forward(Motor left, Motor right){
+void CtrMotor::Forward(){
     left.Drive(DEFAULTSPEED);
     right.Drive(DEFAULTSPEED);
 }
-void CtrMotor::Backward(Motor left, Motor right){
+void CtrMotor::Backward(){
     int temp = abs(DEFAULTSPEED);//returns absolute value of speed.
     //absolute value is denoted as the value from the value 0, regardless of notation.
     left.Drive(-temp);
     right.Drive(-temp);
 }
-void CtrMotor::Left(Motor left, Motor right){
+void CtrMotor::Left(){
     //todo
     int temp = abs(DEFAULTSPEED)/2; //divided for lower speed
     right.Drive(temp);
     left.Drive(-temp);// not entirely sure this is right.
 
 }
-void CtrMotor::Right(Motor left, Motor right){
+void CtrMotor::Right(){
     int temp = abs(DEFAULTSPEED)/2; //divided for lower speed
     right.Drive(-temp);
     left.Drive(temp); // not entirely sure this is right.
 }
-void CtrMotor::Stop(Motor left, Motor right)
+void CtrMotor::Stop()
 {
   left.Brake();
   right.Brake();
 }
-void CtrMotor::DriveByDirections(std::vector<std::string> directions, Motor left, Motor right){
+void CtrMotor::DriveByDirections(std::vector<std::string> directions){
    
    for(string str : directions)
   {
     //can't use switch as it can only take constants, not usertypes. 
     if (str == "UP") {
-        Forward(left, right);
+        Forward();
     }
     else if(str == "RIGHT") {
-        Right(left, right);
+        Right();
     }
     else if( str == "DOWN")
     {
-        Backward(left, right);
+        Backward();
     }
     else {
-        Left(left, right);
+        Left();
     }
     delay(1000); // delays for a second...duh.
   }
