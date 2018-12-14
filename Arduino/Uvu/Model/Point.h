@@ -9,6 +9,7 @@ public:
     int GetY();
     void SetX(int in);
     void SetY(int in);
-    Point(int X, int Y) { }
-    ~Point() { }
+    Point(int X, int Y);
+    Point();
+    ~Point();
 };

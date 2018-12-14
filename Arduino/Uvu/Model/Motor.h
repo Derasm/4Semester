@@ -1,6 +1,7 @@
 #pragma once
-#include "Direction.h"
 #include "arduino.h"
+#include <string>
+#include <vector>
 
 #define DEFAULTSPEED 200 //default speed, can be changed if needed.
 class Motor
@@ -17,19 +18,13 @@ private:
 	void rev(int speed);
 public:
     Motor();
-      ~Motor();
-    Motor(int In1pin, int In2pin, int PWMpin, int offset);
-    void Drive(int speed);
-    void Drive(int speed, int duration);
-    void Brake();
-    void Standby();
+        Motor(int In1pin, int In2pin, int PWMpin, int offset);
 
-    void Forward(Motor motor1, Motor motor2);
-    void Backward(Motor motor1, Motor motor2, int speed);
-    void Left(Motor left, Motor right, int speed);
-    void Right(Motor left, Motor right, int speed);
-    
-    void Drive(Direction direction);
+    ~Motor();
+    void Drive(int speed);
+    void Brake();
+    void Standby(); // hmm.
+
     int GetIn1();
     int GetIn2();
     int GetPWM();

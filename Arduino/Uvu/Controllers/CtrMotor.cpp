@@ -1,9 +1,9 @@
 #include "CtrMotor.h"
 #include "Motor.h"
 #include "arduino.h"
+#include <string>
+#include <vector>
 #pragma once
-
-
 
 //Pins
 #define PWMA 3
@@ -13,56 +13,61 @@
 #define B1N1 10
 #define B1N2 8
 #define PWMB 9
+using namespace std;
 
 Motor CtrMotor::CreateMotor(int In1pin, int In2pin, int PWMpin, int offset){
     Motor motor = Motor(In1pin, In2pin, PWMpin, offset);
     return motor;
 }
-void CtrMotor::Drive(int speed, double duration, Motor motor){
-    speed = speed * offset;
-    if(speed > 0)fwd(speed);
-    else rev (-speed);
-    //currently not doing anything.
-    delay(duration*1000);
-}
-void CtrMotor::Drive(int speed, Motor motor){
-    speed = speed * offset;
-    if(speed > 0)fwd(speed);
-    else rev (-speed);
-}
+
 void CtrMotor::Brake(Motor motor){
-    digitalWrite(in1, HIGH); //takes pin and current
-    digitalWrite(in2, HIGH); //both pins set to high to facilitate stop.
-    analogWrite (PWM,0); // takes pin and speed
+    motor.Brake();
 }
-void CtrMotor::Forward(Motor motor1, Motor motor2){
-    Drive(DEFAULTSPEED, motor1);
-    Drive(DEFAULTSPEED, motor2);
+void CtrMotor::Forward(Motor left, Motor right){
+    left.Drive(DEFAULTSPEED);
+    right.Drive(DEFAULTSPEED);
 }
-void CtrMotor::Forward(Motor motor1, Motor motor2, int speed){
-    Drive(speed, motor1);
-    Drive(speed, motor2);
-    
-}
-void CtrMotor::Backward(Motor motor1, Motor motor2, int speed){
-    int temp = abs(speed);//returns absolute value of speed.
+void CtrMotor::Backward(Motor left, Motor right){
+    int temp = abs(DEFAULTSPEED);//returns absolute value of speed.
     //absolute value is denoted as the value from the value 0, regardless of notation.
-    motor1.Drive(-temp);
-    motor2.Drive(-temp);
-}
-void CtrMotor::Left(Motor left, Motor right, int speed){
-    //todo
-    int temp = abs(speed)/2; //divided for lower speed
-    right.Drive(temp);
     left.Drive(-temp);
+    right.Drive(-temp);
+}
+void CtrMotor::Left(Motor left, Motor right){
+    //todo
+    int temp = abs(DEFAULTSPEED)/2; //divided for lower speed
+    right.Drive(temp);
+    left.Drive(-temp);// not entirely sure this is right.
 
 }
-void CtrMotor::Right(Motor left, Motor right, int speed){
-    int temp = abs(speed)/2; //divided for lower speed
+void CtrMotor::Right(Motor left, Motor right){
+    int temp = abs(DEFAULTSPEED)/2; //divided for lower speed
     right.Drive(-temp);
-    left.Drive(temp);
+    left.Drive(temp); // not entirely sure this is right.
 }
-void CtrMotor::Drive(Direction direction, Motor left, Motor right){
+void CtrMotor::Stop(Motor left, Motor right)
+{
+  left.Brake();
+  right.Brake();
+}
+void CtrMotor::DriveByDirections(std::vector<std::string> directions, Motor left, Motor right){
    
-   
+   for(string str : directions)
+  {
+    //can't use switch as it can only take constants, not usertypes. 
+    if (str == "UP") {
+        Forward(left, right);
+    }
+    else if(str == "RIGHT") {
+        Right(left, right);
+    }
+    else if( str == "DOWN")
+    {
+        Backward(left, right);
+    }
+    else {
+        Left(left, right);
+    }
+    delay(1000); // delays for a second...duh.
+  }
 }

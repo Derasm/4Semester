@@ -1,6 +1,7 @@
-
+#pragma once
 #include "Motor.h"
 #include "arduino.h"
+#include <string>
 /*
 setup for the pins. Saved here for easy findings. 
 #define PWMA 3
@@ -53,18 +54,6 @@ void Motor::Drive(int speed)
     rev(-speed);
   }
 }
-
-void Motor::Drive(int speed, int duration)
-{
-
-  speed = speed * offset;
-  if (speed >= 0)
-    fwd(speed);
-  else
-    rev(-speed);
-  //duration aint doing anything.
-  delay(duration);
-}
 void Motor::Brake()
 {
   digitalWrite(in1, HIGH); //takes pin and current
@@ -76,37 +65,3 @@ void Motor::Standby()
   // digitalWrite(standby, LOW); //as HIGH is necessary to drive.
 }
 
-void Motor::Forward(Motor motor1, Motor motor2)
-{
-  //takes two motors, calls forward or drive on both.
-  motor1.Drive(DEFAULTSPEED);
-  motor2.Drive(DEFAULTSPEED);
-}
-void Motor::Backward(Motor motor1, Motor motor2, int speed)
-{
-  int temp = abs(speed); //IF statement checks value of temp.
-  motor1.Drive(-temp);
-  motor2.Drive(-temp);
-}
-void Motor::Left(Motor left, Motor right, int speed)
-{
-  int temp = abs(speed) / 2;
-  left.Drive(-temp);
-  right.Drive(temp);
-}
-void Motor::Right(Motor left, Motor right, int speed)
-{
-  int temp = abs(speed) / 2;
-  left.Drive(temp);
-  right.Drive(-temp);
-}
-void Brake(Motor motor1, Motor motor2)
-{
-  motor1.Brake();
-  motor2.Brake();
-}
-//Will be implemented later, when app is created for phone
-void Motor::Drive(Direction direction)
-{
-  //TODO
-}

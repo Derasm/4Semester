@@ -15,7 +15,8 @@
                 "D:/Programs/Arduino 1.8.6/hardware/tools/avr/avr/include",
                 "D:/Programs/Arduino 1.8.6/hardware/tools/avr/lib/gcc/avr/4.9.2/include",
                 "${workspaceFolder}/Arduino/Uvu/**",
-                "${workspaceFolder}/Arduino/Uvu/Model"
+                "${workspaceFolder}/Arduino/Uvu/Model",
+                "${workspaceFolder}/Arduino/Uvu/Controllers"
             ],
             "browse": {
                 "limitSymbolsToIncludedHeaders": false,
