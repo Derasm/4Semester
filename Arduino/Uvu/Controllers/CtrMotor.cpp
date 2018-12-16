@@ -15,10 +15,7 @@
 #define PWMB 9
 using namespace std;
 
-Motor CtrMotor::CreateMotor(int In1pin, int In2pin, int PWMpin, int offset){
-    Motor motor = Motor(In1pin, In2pin, PWMpin, offset);
-    return motor;
-}
+
 CtrMotor::CtrMotor(){
     left = Motor(A1N1,A1N2,PWMA,offset);
     right = Motor(B1N1,B1N2,PWMB,offset);

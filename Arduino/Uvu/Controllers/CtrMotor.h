@@ -22,7 +22,8 @@
 class CtrMotor
 {
 private:
-    int in1, in2, PWM, offset;
+    int in1, in2, PWM;
+    int offset = 1;
     void fwd(int speed);
 	void rev(int speed);
     Motor left;
@@ -30,7 +31,6 @@ private:
 public:
     CtrMotor(); 
     ~CtrMotor();
-    Motor CreateMotor(int In1pin, int In2pin, int PWMpin, int offset);
     void Brake(Motor motor);
     void Forward();
     void Backward();

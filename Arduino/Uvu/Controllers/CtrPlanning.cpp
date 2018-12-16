@@ -38,12 +38,6 @@ Point CtrPlanning::CreatePoint(int x, int y){
 //simple planning, doesn't check heurestics, only compared x / y values of start and enpoint. 
 vector<string> CtrPlanning::SimplePlanner(Point startPoint, Point endPoint){
     Point currentPosition = Point(startPoint.GetX(), startPoint.GetY());
-    /*note 
-    UP = 1
-    RIGHT = 2
-    DOWN = 3,
-    LEFT = 4
-    */
     vector<string> directions;
     string direction = "";
    

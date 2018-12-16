@@ -22,7 +22,6 @@ Motor::Motor(int In1pin, int In2pin, int PWMpin, int offset)
   in1 = In1pin;
   in2 = In2pin;
   PWM = PWMpin;
-
   offset = offset;
 
   pinMode(in1, OUTPUT);
@@ -51,7 +50,7 @@ void Motor::Drive(int speed)
     fwd(speed);
   else
   {
-    rev(-speed);
+    rev(speed);
   }
 }
 void Motor::Brake()
