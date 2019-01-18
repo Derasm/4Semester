@@ -1,0 +1,41 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder]"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:\\MinGW\\bin\\gcc.exe",
+            "cStandard": "c11",
+            "intelliSenseMode": "clang-x64"
+        },
+        {
+            "name": "Arduino",
+            "includePath": [
+                "D:/Programs/Arduino/**",
+                "D:/Programs/Arduino/hardware/arduino/avr/cores/arduino/",
+                "D:/Programs/Arduino/hardware/arduino/avr/libraries/EEPROM/",
+                "D:/Programs/Arduino/hardware/arduino/avr/libraries/SPI/",
+                "D:/Programs/Arduino/hardware/arduino/avr/libraries/SoftwareSerial/",
+                "D:/Programs/Arduino/hardware/arduino/avr/libraries/Wire/",
+                "D:/Programs/Arduino/hardware/tools/avr/avr/include/",
+                "D:/Programs/Arduino/hardware/tools/avr/avr/include/avr/",
+                "D:/Programs/Arduino/hardware/tools/avr/avr/include/compat/",
+                "D:/Programs/Arduino/hardware/tools/avr/avr/include/util/",
+                "D:/Programs/Arduino/hardware/tools/avr/lib/gcc/avr/4.*.*/include/",
+                "D:/Programs/Arduino/hardware/tools/avr/lib/gcc/avr/4.*.*/include-fixed/"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        }
+    ],
+    "version": 4
+}

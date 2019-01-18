@@ -51,7 +51,8 @@ void CtrMotor::Stop()
   left.Brake();
   right.Brake();
 }
-void CtrMotor::DriveByDirections(std::vector<std::string> directions){
+//cannot take vector or strings, as these
+void CtrMotor::DriveByDirections(vector<std::string> directons){
    
    for(string str : directions)
   {
